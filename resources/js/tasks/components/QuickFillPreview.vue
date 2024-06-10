@@ -300,7 +300,7 @@ export default {
         });
     },
     validateBase64(field) {
-      var regex = /^data:image\/\w+;base64,/;
+      const regex = /^data:image\/\w+;base64,/;
       return regex.test(field);
     },
     /*
