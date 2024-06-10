@@ -85,9 +85,6 @@
                   <i class="fas fa-times" />
                 </b-button>
               </div>
-              <div class="header-container-warning">
-                <p>{{ disclaimer }}</p>
-              </div>
             </div>
             <div v-else style="width: 92%">
               <div class="header-container-quick">
@@ -129,9 +126,6 @@
                 >
                   <i class="fas fa-times" />
                 </b-button>
-              </div>
-              <div class="header-container-warning">
-                <p>{{ disclaimer }}</p>
               </div>
             </div>
           </template>
@@ -232,7 +226,6 @@ export default {
         },
       ],
       dataTasks: {},
-      disclaimer: this.$t("This is a Beta version and when using Quickfill, it may replace the pre-filled information in the form."),
       tasksListName: "preview-table",
     };
   },
