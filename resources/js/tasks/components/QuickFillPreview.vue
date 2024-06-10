@@ -174,9 +174,6 @@
 </template>
 <script>
 export default {
-  components: {
-    TasksList: () => import('./TasksList.vue'),
-  },
   props: ["task", "propColumns", "propFilters", "propFromButton", "screenFields"],
   data() {
     return {
@@ -271,10 +268,6 @@ export default {
       }
       this.$emit("close");
     },
-    validateBase64(field) {
-      const regex = /^data:image\/\w+;base64,/;
-      return regex.test(field);
-    },
     buttonThisDataFromFullTask(quickFillData) {
       // If the task does not have a draft yet, use the task data
       const dataToUse = this.task.draft?.data ?? this.task.data;
@@ -291,11 +284,6 @@ export default {
           // use the value from the quick fill
           quickFillValue = _.get(quickFillData, field, null);
         }
-
-        if(this.validateBase64(quickFillValue)) {
-          _.set(draftData, field, existingValue);
-          return;
-        }
         // Set the value. This handles nested values using dot notation in 'field' string
         _.set(draftData, field, quickFillValue);
       });
@@ -310,6 +298,10 @@ export default {
         .catch((error) => {
           console.error("Error", error);
         });
+    },
+    validateBase64(field) {
+      var regex = /^data:image\/\w+;base64,/;
+      return regex.test(field);
     },
     /*
      * To do: There's a global-search-bar class with a large z-index. We added a class 

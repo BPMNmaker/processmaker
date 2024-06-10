@@ -13,6 +13,7 @@
 npm-debug.log
 yarn-error.log
 .env
+.kilo
 /public/hot
 /public/storage
 /public/*.js
