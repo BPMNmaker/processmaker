@@ -300,9 +300,7 @@ class ScreenController extends Controller
         $request->validate(Screen::rules($screen));
         $screen->fill($request->input());
         $original = $screen->getOriginal();
-
-        $this->updateScreenDetails($request, $screen, $original, $lastVersion);
-
+        $screen->config = $lastVersion->config;
         $screen->saveOrFail();
         $screen->syncProjectAsset($request, Screen::class);
 
