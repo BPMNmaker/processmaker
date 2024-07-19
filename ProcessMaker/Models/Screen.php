@@ -107,18 +107,6 @@ class Screen extends ProcessMakerModel implements ScreenInterface, PrometheusMet
         'updated_at',
     ];
 
-    public static function boot()
-    {
-        parent::boot();
-
-        $clearCacheCallback = function () {
-            self::clearAndRebuildUserProjectAssetsCache();
-        };
-
-        static::updating($clearCacheCallback);
-        static::deleting($clearCacheCallback);
-    }
-
     /**
      * Validation rules
      *
