@@ -217,6 +217,7 @@ return [
         ProcessMaker\Providers\MixServiceProvider::class,
         ProcessMaker\Providers\TenantQueueServiceProvider::class,
         ProcessMaker\Providers\JsonOptimizerServiceProvider::class,
+        ProcessMaker\Package\WebEntry\WebEntryServiceProvider::class,
     ])->toArray(),
 
     'aliases' => Facade::defaultAliases()->merge([

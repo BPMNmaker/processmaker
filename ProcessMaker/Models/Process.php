@@ -1313,8 +1313,6 @@ class Process extends ProcessMakerModel implements HasMedia, ProcessModelInterfa
                     \Log::info('*** Error: ' . $e->getMessage());
                 }
             }
-                }
-            }
         }
     }
 

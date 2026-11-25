@@ -59,3 +59,6 @@ storage/transitions
 **/caddy
 frankenphp
 frankenphp-worker.php
+*.har
+processmaker-several-version
+db
